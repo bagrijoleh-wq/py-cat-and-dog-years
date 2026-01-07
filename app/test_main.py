@@ -39,6 +39,7 @@ def test_should_return_zeros(
 ) -> None:
     assert get_human_age(age_cat, age_dog) == expected
 
+
 @pytest.mark.parametrize(
     "age_cat, age_dog, expected",
     [
@@ -54,6 +55,6 @@ def test_raises_errors(
         age_cat: int,
         age_dog: int,
         expected: type
-):
+) -> None:
     with pytest.raises(expected):
         get_human_age(age_cat, age_dog)
