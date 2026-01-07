@@ -22,6 +22,9 @@ from app.main import get_human_age
             24, 24, [2, 2], id="should give 2 human year after 24 cat/dog year"
         ),
         pytest.param(
+            28, 28, [3, 2], id="should give 3/2 human years 28/28 cat/dog year"
+        ),
+        pytest.param(
             28, 29, [3, 3], id="should give 3 human years 28/29 cat/dog year"
         ),
         pytest.param(
