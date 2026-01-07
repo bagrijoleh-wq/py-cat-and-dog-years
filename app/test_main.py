@@ -26,7 +26,10 @@ from app.main import get_human_age
         ),
         pytest.param(
             100, 100, [21, 17], id="chek wright count for cat/dog year"
-        )
+        ),
+        pytest.param(
+            -5, -10, [0, 0], id="expected 0 when cat and dog age are negative"
+        ),
     ]
 )
 def test_should_return_zeros(
@@ -35,3 +38,22 @@ def test_should_return_zeros(
         expected: list
 ) -> None:
     assert get_human_age(age_cat, age_dog) == expected
+
+@pytest.mark.parametrize(
+    "age_cat, age_dog, expected",
+    [
+        pytest.param(
+            "100",
+            True,
+            TypeError,
+            id="should raise TypeError when age category is invalid"
+        )
+    ]
+)
+def test_raises_errors(
+        age_cat: int,
+        age_dog: int,
+        expected: type
+):
+    with pytest.raises(expected):
+        get_human_age(age_cat, age_dog)
