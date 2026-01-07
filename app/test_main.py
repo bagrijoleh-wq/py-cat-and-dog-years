@@ -10,13 +10,19 @@ from app.main import get_human_age
             0, 0, [0, 0], id="expected 0 when cat and dog age are 0"
         ),
         pytest.param(
-            14, 15, [0, 1], id="should give 1 human year after 15 cat/dog year"
+            14, 14, [0, 0], id="should give 0 human year after 14 cat/dog year"
         ),
         pytest.param(
-            24, 25, [2, 2], id="should give 2 human year after 24 cat/dog year"
+            15, 15, [1, 1], id="should give 1 human year after 15 cat/dog year"
         ),
         pytest.param(
-            28, 29, [2, 2], id="should give 3 human years 28/29 cat/dog year"
+            23, 23, [1, 1], id="should give 1 human year after 23 cat/dog year"
+        ),
+        pytest.param(
+            24, 24, [2, 2], id="should give 2 human year after 24 cat/dog year"
+        ),
+        pytest.param(
+            28, 29, [3, 3], id="should give 3 human years 28/29 cat/dog year"
         ),
         pytest.param(
             100, 100, [21, 17], id="chek wright count for cat/dog year"
